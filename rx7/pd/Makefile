@@ -17,8 +17,8 @@ PDEXTERNALSDIR=	${STAGEDIR}${PREFIX}/lib/pd-externals
 FOOTILS_DESTDIR=	${PDEXTERNALSDIR}/footils
 
 #OBJECTS=	dx7_voice.o dx7_voice_data.o dx7_voice_envelope.o \
-	dx7_voice_operator.o dxt_voice_algorithm.o properties.o tables.o \
-	open_bank.o midi_event.o mixer.o
+#	dx7_voice_operator.o dxt_voice_algorithm.o properties.o tables.o \
+#	open_bank.o midi_event.o mixer.o
 OBJECTS=
 
 all:

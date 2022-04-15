@@ -48,14 +48,15 @@ SNDOBJLIB=	libsndobj.a
 SNDOBJINCPATH=	${LOCALBASE}/include/SndObj
 
 # compiler+linker stuff	### EDIT! ###
-INCLUDES=	${PDINCPATH} ${SNDOBJINCPATH} $(FLEXTINC)
+INCLUDES=	${PDINCPATH} ${SNDOBJINCPATH} ${FLEXTINC} ${SNDOBJINCPATH}
 LIBPATH=
 FLAGS=	-DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES
 #CFLAGS=	-O6 -fno-rtti 
-CFLAGS=	-O2 -fno-rtti -fPIC
+CFLAGS=	-O2 -fno-rtti -fPIC -DFLEXT_USE_CMEM -DFLEXT_NOGLOBALNEW
 #CFLAGS+=	-mcpu=pentiumpro  # gcc 2.95
 ## CFLAGS+=-mcpu=pentium3 -msse  # gcc 3.2
 LDFLAGS+=	-Wl,-z,notext
+#LIBS=	m sndobj
 LIBS=	m
 #LIBS+=sndobj
 # need OS conditional
@@ -146,7 +147,7 @@ clean:
 install:
 	mkdir -p ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_LIB} ${EXTENSION}/syncgrain~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
-	${INSTALL_DATA} pd/syncgrain~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} syncgrain~-help.pd ${FOOTILS_PDEXTERNALSDIR}
 	(test "${INSTALL_EXAMPLES}" = "yes") && (mkdir -p ${FOOTILS_EXAMPLESPATH})
 	(test "${INSTALL_EXAMPLES}" = "yes") && \
-		(${INSTALL_DATA} pd-linux/syncgrain.pd ${FOOTILS_EXAMPLESPATH})
+		(${INSTALL_DATA} syncgrain.pd ${FOOTILS_EXAMPLESPATH})

@@ -3,7 +3,7 @@
 #X obj 57 111 dsp;
 #X obj 57 82 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 0 1
 ;
-#X msg 235 112 load rom1a.bnk;
+#X msg 235 112 load rx7-rom1a.bnk;
 #X obj 244 620 dac~;
 #X floatatom 478 215 5 0 0;
 #X floatatom 531 217 5 0 0;
@@ -27,7 +27,7 @@
 #X floatatom 73 137 5 0 0;
 #X floatatom 860 343 5 0 0;
 #X obj 860 366 t b f;
-#X msg 214 84 load road1.bnk;
+#X msg 214 84 load rx7-road1.bnk;
 #X msg 843 127 0;
 #X msg 890 126 16;
 #X obj 581 182 - 0;
