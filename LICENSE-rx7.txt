@@ -1,0 +1,18 @@
+in rx7/pd/rx7~.cpp (use this software for any purpose but keep notice intact):
+
+/* rx7~ -- STK-based sitar synthesis
+ * requires STK library
+ * Copyleft 2001 Yves Degoyon.
+ * Permission is granted to use this software for any purpose provided you
+ * keep this copyright notice intact.
+ *
+ * THE AUTHOR AND HIS EXPLOITERS MAKE NO WARRANTY, EXPRESS OR IMPLIED,
+ * IN CONNECTION WITH THIS SOFTWARE.
+ *
+*/
+
+in rx7/pd/README:
+rx7~ - DX7 emulator external for PD based on RX/Saturno
+
+PD-external written by Frank Barknecht <barknech@ph-cip.uni-koeln.de>
+RX/Saturno written by Juan Linietsky.
