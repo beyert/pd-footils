@@ -29,7 +29,7 @@ LIBS=	m
 
 #PDEXTRA=	$(DESTDIR)${LOCALBASE}/lib/pd/extra
 FOOTILS_PDEXTERNALSDIR=	${STAGEDIR}${PREFIX}/lib/pd-externals/footils
-FOOTILS_EXAMPLESPATH=	${STAGEDIR}${PREFIX}/share/examples/footils
+#FOOTILS_EXAMPLESPATH=	${STAGEDIR}${PREFIX}/share/examples/footils
 
 TARGDIR=	./
 TARGET=	$(TARGDIR)/shabby~.${EXTENSION} $(TARGDIR)/shaffy~.${EXTENSION}
@@ -51,8 +51,6 @@ $(TARGET) : $(patsubst %.cpp,$(TARGDIR)/%.o,$(SRCS)) ${FLEXTLIB}
 	chmod 755 $@
 
 install: $(TARGET)
-#	chown root.root $^
-#	cp $^ $(PDEXTRA)
 	mkdir -p ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_LIB} shabby~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_LIB} shaffy~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
@@ -64,9 +62,8 @@ install: $(TARGET)
 	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
-	(test "${INSTALL_EXAMPLES}" = "yes") && (mkdir -p ${FOOTILS_EXAMPLESPATH})
-	(test "${INSTALL_EXAMPLES}" = "yes") && \
-		(${INSTALL_DATA} gadsr.pd ${FOOTILS_EXAMPLESPATH})
+	${INSTALL_DATA} gadsr.pd ${FOOTILS_PDEXTERNALSDIR}
+#	(test "${INSTALL_EXAMPLES}" = "yes") && (mkdir -p ${FOOTILS_EXAMPLESPATH})
 
 .PHONY: clean
 clean:

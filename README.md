@@ -26,9 +26,9 @@ signal rate control over harmonics.
 shaffy~: Waveshaper using 9 Chebychev polynomials to generate harmonics from an
 incoming sinewave.  Maybe used as an additive synth for wind-like sounds.
 
-syncgrain~: granular synth (GNU GPL)
+syncgrain~: granular synth (GNU GPLv2)
 
-fluid~: A fluidsynth soundfont (SF2) player (GNU GPLv2)
+fluid~: A fluidsynth soundfont (SF2) player (GNU GPLv2+)
 
 ## Building
 

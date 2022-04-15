@@ -1,4 +1,4 @@
-from syncgrain/licence.txt (original file misspelled):
+from syncgrain/licence.txt (original file misspelled, this is GPLv2):
 
    This software is licenced under the following terms below.
 
