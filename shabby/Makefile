@@ -62,7 +62,8 @@ install: $(TARGET)
 	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
-	${INSTALL_DATA} gadsr.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shabby_shaffy-silly ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shabby_shaffy-gadsr.pd ${FOOTILS_PDEXTERNALSDIR}
 #	(test "${INSTALL_EXAMPLES}" = "yes") && (mkdir -p ${FOOTILS_EXAMPLESPATH})
 
 .PHONY: clean
