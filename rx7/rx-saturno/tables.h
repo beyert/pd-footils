@@ -35,8 +35,10 @@ public:
 	static float EG_rate_rise_percent[128];
 	static float EG_rate_decay_percent[128];
 	
-	static float Dx7_Tables::EG_level_to_peak[128]; // for modulatoros
-	static float Dx7_Tables::EG_amp_to_peak[128]; //for carriers
+    //static float Dx7_Tables::EG_level_to_peak[128]; // for modulatoros
+	//static float Dx7_Tables::EG_amp_to_peak[128]; //for carriers
+	static float EG_level_to_peak[128]; // for modulatoros
+	static float EG_amp_to_peak[128]; //for carriers
 	static Sint32 carrier_modifier[100];
 	static Sint32 modulator_modifier[100];	
 	

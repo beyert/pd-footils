@@ -86,10 +86,10 @@ static void rx7_loadbank(t_rx7* x, t_symbol *s, int argc, t_atom *argv)
 	if (!*bank->s_name)
     		return;
         
-	vector<Dx7_Voice::Data*> tmp_patch;
+    std::vector<Dx7_Voice::Data*> tmp_patch;
 	int i;
 	
-	vector<Dx7_Voice::Data> instruments = Open_Bank::file(bank->s_name);
+    std::vector<Dx7_Voice::Data> instruments = Open_Bank::file(bank->s_name);
         int sizeOfInstr = instruments.size();
 	
 	

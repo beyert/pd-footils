@@ -1,45 +1,73 @@
 # change this!!!
 # CXX=g++ # -3.2
-CFLAGS=-O6 -mcpu=pentium -g
+CXX=	c++
 #CFLAGS=-O6  -g -march=athlon
-FLAGS=-DPD
+#CFLAGS=-O2 -mcpu=pentium -g
+CFLAGS=	-O2 -g
+FLAGS=	-DPD
 
-FLEXTPATH=/usr/lib/pd/flext
+#EXTENSION=	pd_linux
+EXTENSION=	pd_freebsd
 
-INCLUDES=/usr/lib/pd/include $(FLEXTINC)
-FLEXTLIB=$(FLEXTPATH)/flext.a
-LIBS=m
+LOCALBASE=	/usr/local
+PREFIX=	/usr/local
 
-PDEXTRA=$(DESTDIR)/usr/lib/pd/extra
+INSTALL_DATA=	install -m 0644
+INSTALL_LIB=	install -s -m 0644
 
-TARGDIR=./
-TARGET=$(TARGDIR)/shabby~.pd_linux $(TARGDIR)/shaffy~.pd_linux 
-SRCS=shabby.cpp shaffy.cpp
+INSTALL_EXAMPLES=	no
+
+FLEXTLIBPATH=	${LOCALBASE}/lib
+
+INCPATH=	${LOCALBASE}/include
+PDINCPATH=	${LOCALBASE}/include/pd
+FLEXTINCPATH=	${LOCALBASE}/include/flext
+INCLUDES=	/${INCPATH} ${FLEXTINCPATH} ${PDINCPATH}
+#FLEXTLIB=	${FLEXTLIBPATH}/flext.a
+FLEXTLIB=	flext.a
+LIBS=	m
+
+#PDEXTRA=	$(DESTDIR)${LOCALBASE}/lib/pd/extra
+FOOTILS_PDEXTERNALSDIR=	${STAGEDIR}${PREFIX}/lib/pd-externals/footils
+FOOTILS_EXAMPLESPATH=	${STAGEDIR}${PREFIX}/share/examples/footils
+
+TARGDIR=	./
+TARGET=	$(TARGDIR)/shabby~.${EXTENSION} $(TARGDIR)/shaffy~.${EXTENSION}
+SRCS=	shabby.cpp shaffy.cpp
 
 all: $(TARGDIR) $(TARGET)
 
 $(TARGDIR):
 	mkdir $(TARGDIR)
 
-$(TARGDIR)/%.o : %.cpp
-	$(CXX) -c $(CFLAGS) $(FLAGS) $(patsubst %,-I%,$(INCLUDES)) $< -o $@
+${FLEXTLIB}:
+	cp -pv ${FLEXTLIBPATH}/libflext-pd.a ${FLEXTLIB}
 
-$(TARGET) : $(patsubst %.cpp,$(TARGDIR)/%.o,$(SRCS)) $(FLEXTLIB) 
-	$(CXX) $(LDFLAGS) -shared $^ $(patsubst %,-l%,$(LIBS)) -o $@ 
+$(TARGDIR)/%.o : %.cpp
+	${CXX} -c ${CFLAGS} -fPIC ${FLAGS} $(patsubst %,-I%,$(INCLUDES)) $< -o $@
+
+$(TARGET) : $(patsubst %.cpp,$(TARGDIR)/%.o,$(SRCS)) ${FLEXTLIB}
+	${CXX} ${LDFLAGS} -Wl,-z,notext -shared $^ $(patsubst %,-l%,$(LIBS)) -o $@
 	chmod 755 $@
 
 install: $(TARGET)
-	chown root.root $^ 
-	cp $^ $(PDEXTRA)
+#	chown root.root $^
+#	cp $^ $(PDEXTRA)
+	mkdir -p ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_LIB} shabby~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_LIB} shaffy~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shabby~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} README ${FOOTILS_PDEXTERNALSDIR}/README-shabby_shaffy.txt
+	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	${INSTALL_DATA} shaffy~-help.pd ${FOOTILS_PDEXTERNALSDIR}
+	(test "${INSTALL_EXAMPLES}" = "yes") && (mkdir -p ${FOOTILS_EXAMPLESPATH})
+	(test "${INSTALL_EXAMPLES}" = "yes") && \
+		(${INSTALL_DATA} gadsr.pd ${FOOTILS_EXAMPLESPATH})
 
 .PHONY: clean
 clean:
 	rm -f $(TARGDIR)/*.o $(TARGET)
-	
-
-
-
-
-
-
-

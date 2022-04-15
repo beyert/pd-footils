@@ -22,11 +22,12 @@
 #include "s_stuff.h"
 #else 
 #include "m_imp.h"
+#include "s_stuff.h"
 #endif
 
 #include "g_canvas.h"
 
-#include "../../old_g_all_guis.inc"
+#include "g_all_guis.h"
 #include <math.h>
 
 #ifdef WIN32
@@ -366,10 +367,6 @@ void knob_check_minmax(t_knob *x, double min, double max)
     }
     x->x_min = min;
     x->x_max = max;
-    if(x->x_min > x->x_max)                /* bugfix */
-	x->x_gui.x_isa.x_reverse = 1;
-    else
-        x->x_gui.x_isa.x_reverse = 0;
     if(x->x_lin0_log1)
 	x->x_k = log(x->x_max/x->x_min)/(double)(x->x_gui.x_h - 1);
     else
@@ -511,20 +508,10 @@ static void knob_set(t_knob *x, t_floatarg f)
 {
     double g;
 
-    if(x->x_gui.x_isa.x_reverse)    /* bugfix */
-    {
-	if(f > x->x_min)
-	    f = x->x_min;
-	if(f < x->x_max)
-	    f = x->x_max;
-    }
-    else
-    {
 	if(f > x->x_max)
 	    f = x->x_max;
 	if(f < x->x_min)
 	    f = x->x_min;
-    }
     if(x->x_lin0_log1)
 	g = log(f/x->x_min)/x->x_k;
     else

@@ -35,13 +35,13 @@ public:
 	
 	struct Bank {
 	
-		vector<Dx7_Voice::Data*> patch;
+      std::vector<Dx7_Voice::Data*> patch;
 
 	};
 	
 
 		
-	vector<Bank> bank;
+    std::vector<Bank> bank;
 
 private:	
 		
@@ -50,7 +50,7 @@ private:
 		int patch;
 		int bank;
 		
-		typedef hash_map<int,int> Voice_List;
+        typedef __gnu_cxx::hash_map<int,int> Voice_List;
 	
 		Voice_List voice_list;
 		

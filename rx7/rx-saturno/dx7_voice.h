@@ -87,7 +87,7 @@ public:
 		
 		char transpose;
 		
-		string name;
+        std::string name;
 	};
 	
 	static int base_freq;

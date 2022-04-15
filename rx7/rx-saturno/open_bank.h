@@ -20,6 +20,11 @@
 #include "dx7_voice.h"
 #include "properties.h"
 
+#include <hash_map>
+
+//using __gnu_cxx::hash_map;
+//using __gnu_cxx::hasher;
+//using std::hash;
 
 /**
   *@author Juan Linietsky
@@ -28,7 +33,7 @@
 class Open_Bank {
 public:
 
-	static vector<Dx7_Voice::Data> file(string p_filename);
+  static std::vector<Dx7_Voice::Data> file(std::string p_filename);
 	Open_Bank();
 	~Open_Bank();
 };

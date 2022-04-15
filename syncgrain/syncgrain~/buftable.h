@@ -54,7 +54,7 @@ class buftable : public Table
 		{ 
 			if ( Ok() )
 			{
-				return buf->Data(); 
+				return (float *)buf->Data(); 
 			}
 			else
 				return NULL;

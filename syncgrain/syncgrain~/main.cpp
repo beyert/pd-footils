@@ -41,6 +41,19 @@
 #error You need at least flext version 0.4.1
 #endif
 
+class HammingTable : public Table {
+protected:
+	float  m_alpha;
+
+public:
+
+	void SetParam(long L, float alpha=.54);
+	char* ErrorMessage();
+	short MakeTable();
+	HammingTable();
+	HammingTable(long L, float alpha);
+	~HammingTable();
+};
 
 class syncgrain:
 	public flext_sndobj
@@ -138,8 +151,8 @@ bool syncgrain::NewObjs()
 	tablesize = buf->GetLen();
 	//post("Created buf");
 	envtable  = new HammingTable();
-	sr = static_cast<int>(Samplerate());	
-	blocksize = static_cast<int>(Blocksize());	
+	sr = (int)Samplerate();
+	blocksize = (int)Blocksize();
 	grain = new BufSyncGrain(
 		buf, envtable, fr, amp, pitch, grsize, prate, 0, 0, 0, 0, olaps, 
 		blocksize, sr );
@@ -170,7 +183,7 @@ void syncgrain::ProcessObjs()
 
 int syncgrain::mbuf_set(int argc,const t_atom *argv)
 {
-	bufname  = argc >= 1 ? GetASymbol(argv[0]) : NULL;
+	bufname  = argc >= 1 ? (t_symbol *)GetASymbol(argv[0]) : NULL;
 	FreeObjs();
 	NewObjs();
 	tablesize = buf->GetLen();
