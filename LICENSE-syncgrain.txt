@@ -1,3 +1,5 @@
+from syncgrain/licence.txt (original file misspelled):
+
    This software is licenced under the following terms below.
 
                                      GNU GENERAL PUBLIC LICENSE

@@ -1,4 +1,5 @@
-excerpt from knob/README (Old Pure Data 0.35 license, see https://puredata.info/about/pdlicense for more information):
+excerpt from knob/README (Old Pure Data 0.35 license, see
+https://puredata.info/about/pdlicense for more information):
 
 This software is copyrighted by Miller Puckette and others.  The following
 terms apply to all files associated with the software unless explicitly
