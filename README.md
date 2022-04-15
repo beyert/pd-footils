@@ -17,7 +17,7 @@ copyfree compatible?), similar yet distinct from flatgui/knob and
 abctools/abcknob
 
 rx7~: DX7 emulator external for Pure Data based on RX/Saturno 0.0.1 (rx7~
-appears to be some kind of permissive license, though rx-saturno is GPLv2)
+appears to be some kind of permissive license, though rx-saturno is GNU GPLv2)
 
 shabby~: Waveshaper using 11 Chebychev polynomials to generate harmonics from
 an incoming sinewave.  May be used to make a rudimentary additive synth with
@@ -28,7 +28,7 @@ incoming sinewave.  Maybe used as an additive synth for wind-like sounds.
 
 syncgrain~: granular synth (GNU GPL)
 
-fluid~: A fluidsynth soundfont (SF2) player
+fluid~: A fluidsynth soundfont (SF2) player (GNU GPLv2)
 
 ## Building
 
