@@ -77,7 +77,7 @@ $(OUTPATH)/%.${EXTENSION}: $(OUTPATH)/%.o
 	${STRIP} $@
 	chmod 755 $@
 
-install-externals:
+install:
 	mkdir -p ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_LIB} ${EXTENSION}/fluid~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_DATA} pd/fluid~-help.pd ${FOOTILS_PDEXTERNALSDIR}
@@ -88,8 +88,6 @@ install-externals:
 	(test "${INSTALL_EXAMPLES}" = "yes") && \
 		(${INSTALL_DATA} pd/simple_onthego_synth.pd \
 			${FOOTILS_EXAMPLESPATH}/fluid-simple_onthego_synth.pd)
-
-install:	install-examples-${INSTALL_EXAMPLES} install-externals
 
 .PHONY: clean
 clean:
