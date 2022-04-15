@@ -10,14 +10,14 @@ Note that the licenses differ substantially between each project.
 
 Timothy Beyer 2022-04-14
 
-## externals
+## Description of externals
 
 knob: one of the earliest and best knob externals (Pure Data 0.35 license,
 copyfree compatible?), similar yet distinct from flatgui/knob and
 abctools/abcknob
 
-rx7~: DX7 emulator external for PD based on RX/Saturno 0.0.1 (rx7~ appears to
-be some kind of permissive license, though rx-saturno is GPLv2)
+rx7~: DX7 emulator external for Pure Data based on RX/Saturno 0.0.1 (rx7~
+appears to be some kind of permissive license, though rx-saturno is GPLv2)
 
 shabby~: Waveshaper using 11 Chebychev polynomials to generate harmonics from
 an incoming sinewave.  May be used to make a rudimentary additive synth with
