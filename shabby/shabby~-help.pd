@@ -134,8 +134,7 @@ bounds 0 -1 800 1 \; scope resize 800 \;;
 #X obj 746 233 sig~ 0;
 #X obj 746 207 r t10fac;
 #X msg 10 32 50;
-#X obj 144 366 shabby~ ____________________________________________
-;
+#X obj 144 366 shabby~;
 #X obj 10 106 osc~ 440;
 #X text 618 376 OPEN CONTROLS HERE!;
 #X obj 108 184 shabby_shaffy-gadsr 1 10 50 0.6 300;
