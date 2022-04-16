@@ -44,7 +44,7 @@ rx7:
 
 install:
 	@${MKDIR} ${FOOTILS_DESTDIR}
-	@${INSTALL_DATA} README ${FOOTILS_DESTDIR}/README-rx7.txt
+	@${INSTALL_DATA} README.md ${FOOTILS_DESTDIR}/README-rx7.md
 	@${INSTALL_DATA} road1.bnk ${FOOTILS_DESTDIR}/rx7-road1.bnk
 	@${INSTALL_DATA} rom1a.bnk ${FOOTILS_DESTDIR}/rx7-rom1a.bnk
 	@${INSTALL_DATA} road1.bnk ${FOOTILS_DESTDIR}/rx7-road1.bnk

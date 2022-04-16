@@ -114,7 +114,7 @@ install:
 	mkdir -p ${FOOTILS_DESTDIR}
 	cp -p ${NAME}*.pd_* ${FOOTILS_DESTDIR}
 	cp -p ${NAME}-help.pd ${FOOTILS_DESTDIR}
-	cp -p README ${FOOTILS_DESTDIR}/README-knob.txt
+	cp -p README.md ${FOOTILS_DESTDIR}/README-knob.md
 	(test "${INSTALL_EXAMPLES}" = "yes") && \
 		(mkdir -p ${FOOTILS_EXAMPLESPATH}) || (echo "do not install examples")
 	(test "${INSTALL_EXAMPLES}" = "yes") && \
