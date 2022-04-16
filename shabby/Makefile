@@ -41,7 +41,7 @@ $(TARGDIR):
 	mkdir $(TARGDIR)
 
 ${FLEXTLIB}:
-	cp -pv ${FLEXTLIBPATH}/libflext-pd_sd.a ${*}.a
+	cp -pv ${FLEXTLIBPATH}/libflext-pd_s.a ${*}.a
 
 $(TARGDIR)/%.o:	%.cpp
 	${CXX} -c ${CFLAGS} -fPIC ${FLAGS} $(patsubst %,-I%,$(INCLUDES)) $< -o $@
