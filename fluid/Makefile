@@ -79,9 +79,9 @@ ${FLEXTLIB}:
 	cp -pv ${FLEXTLIBPATH}/libflext-pd_s.a ${*}.a
 
 $(OUTPATH)/%.o: %/main.cpp
-	${CXX} -c ${CFLAGS} $(FLAGS) $(patsubst %,-I%,${INCLUDES} ${INCPATH} ${FLEXTINCPATH} ${PDINCPATH}) $< -o $@
+	${CXX} -c ${CFLAGS} $(FLAGS) $(patsubst %,-I%,${INCLUDES}) $< -o $@
 
-$(OUTPATH)/%.${EXTENSION}: $(OUTPATH)/%.o 
+$(OUTPATH)/%.${EXTENSION}: ${FLEXTLIB} $(OUTPATH)/%.o 
 	${CXX} ${LDFLAGS} -shared ${FLEXTLIB} $(patsubst %,-L%,${LIBPATH}) ${^} \
 		$(patsubst %,-l%,${LIBS}) ${FLUIDLIB} -o ${@}
 	${STRIP} ${@}
