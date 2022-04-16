@@ -1,8 +1,8 @@
 # rx7~ - DX7 emulator external for PD based on RX/Saturno
 
 This PD external was written by Frank Barknecht <barknech@ph-cip.uni-koeln.de>,
-and RX/Saturno was written by Juan Linietsky.  rx7~ and RX/Saturno was restored
-by Timothy Beyer for usage with modern versions of Pure Data.
+and RX/Saturno was written by Juan Linietsky.  rx7~ and RX/Saturno were
+restored by Timothy Beyer for usage with modern versions of Pure Data.
 
 Usage
 -----

@@ -1,15 +1,16 @@
 # Pure Data KNOB external
 
-Version: 0.3
+Version: 0.3.1
 
 "knob" is a gui external for PD based on the IEMGUI-vslider included in PD.
 
 Knob is available at http://footils.org (soon)
 
-It was written by Frank Barknecht with help by Olaf Matthes reusing very much
+It was written by Frank Barknecht with help by Olaf Matthes reusing significant
 IEM code by Thomas Musil.
 
-## CHANGELOG
+CHANGELOG
+---------
 
 Version: 0.3.1
   *  Restore external on modern versions of Pure Data
@@ -24,19 +25,22 @@ Version: 0.02
   and wrote the makefile.  Still you need the sources of PD in reach, to
   build the external as some non standard headers in the source are used.
 
-  * While moving the knob, the dial line is now in the correct position.
+  *  While moving the knob, the dial line is now in the correct position.
 
-## INSTALLATION
+INSTALLATION
+------------
 
 Edit the "Makefile" and put the correct path to the pd-sources at the top.
 Then on Linux just issue "make" or on FreeBSD "gmake"
 
-## BUGS
+BUGS
+----
 
 Apart from dirty code, a serious bug is that knob changes inlet values a bit on
 the way to the outlet.  So don't expect immutable behaviour for now.
 
-## LICENSE
+LICENSE
+-------
 
 (Pure Data 0.35 license)
 
