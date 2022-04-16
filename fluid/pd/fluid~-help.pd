@@ -74,7 +74,7 @@
 0;
 #X obj 41 262 cnv 15 100 30 empty empty empty 20 15 1 14 -257472 -66577
 0;
-#X obj 43 342 ezdac~;
+#X obj 43 342 fluid-ezdac~;
 #X obj 66 199 r \$0-iiwu;
 #X msg 66 233 help;
 #X msg 146 217 init /usr/lib/awe/sfbank/2gmgsmt.sf2;

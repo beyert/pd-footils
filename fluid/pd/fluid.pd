@@ -16,7 +16,7 @@
 well:;
 #X obj 594 56 cnv 15 372 158 empty Notes Soundfonts 20 12 65 14 -228992
 -66577 0;
-#X msg 650 146 load /usr/lib/awe/sfbank/2gmgsmt.sf2;
+#X msg 650 146 load /usr/local/lib/awe/sfbank/2gmgsmt.sf2;
 #X msg 644 126 load \$1;
 #X obj 644 104 openpanel;
 #X obj 644 84 bng 15 250 50 0 empty empty empty 0 -6 0 8 -260818 -1
