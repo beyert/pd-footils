@@ -46,9 +46,9 @@ ${FLEXTLIB}:
 $(TARGDIR)/%.o:	%.cpp
 	${CXX} -c ${CFLAGS} -fPIC ${FLAGS} $(patsubst %,-I%,$(INCLUDES)) $< -o $@
 
-$(TARGET):	$(patsubst %.cpp,$(TARGDIR)/%.o,$(SRCS)) ${FLEXTLIB}
-	${CXX} ${LDFLAGS} -Wl,-z,notext --shared --export-dynamic \
-		$^ $(patsubst %,-l%,$(LIBS)) ${FLEXTLIB} -o ${@}
+$(TARGET):	${FLEXLIB} $(patsubst %.cpp,$(TARGDIR)/%.o,$(SRCS))
+	${CXX} ${LDFLAGS} -Wl,-z,notext -shared \
+		$^ $(patsubst %,-l%,$(LIBS)) -o ${@}
 	chmod 755 ${@}
 
 install:	$(TARGET)
