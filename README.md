@@ -45,5 +45,5 @@ which need a C++ binding), fluidsynth (needed for fluidsynth~)
 
 FreeBSD ports for this port (audio/pd-footils), for audio/pd (I will soon
 release modern version with full MIDI support), audio/pd-portmidi-sndio,
-audio/pd-flext, audio/pd-sndobj and numerous other PD externals will be
+audio/pd-flext, audio/sndobj and numerous other PD externals will be
 released soon.
