@@ -32,17 +32,28 @@ fluid~: A fluidsynth soundfont (SF2) player (GNU GPLv2+ license)
 
 ## Status of Externals
 
-knob: runs perfectly as far as I can tell, from the first time it was run, and well before the other externals
+knob: runs perfectly as far as I can tell, from the first time it was run, and
+well before the other externals
 
-rx7~: now runs perfectly with sound; initially was missing files from RX-Saturno, and since more object files needed to be built, more patching was required, but the end result is that it builds and runs properly
+rx7~: now runs perfectly with sound; initially was missing files from
+RX-Saturno, and since more object files needed to be built, more patching was
+required, but the end result is that it builds and runs properly
 
-shabby~: almost working!  The flext runtime errors have been resolved in using the statically-linked non-debug static version, but gives "Too many creation arguments" error at runtime
+shabby~: almost working!  The flext runtime errors have been resolved in using
+the statically-linked non-debug static version, but gives "Too many creation
+arguments" error at runtime
 
-shaffy~: almost working!  The flext runtime errors have been resolved in using the statically-linked non-debug static version, but gives "Too many creation arguments" error at runtime
+shaffy~: almost working!  The flext runtime errors have been resolved in using
+the statically-linked non-debug static version, but gives "Too many creation
+arguments" error at runtime
 
-syncgrain~: now runs perfectly with sound; required flext runtime errors to be resolved in using the statically-linked non-debug static version
+syncgrain~: now runs perfectly with sound; required flext runtime errors to be
+resolved in using the statically-linked non-debug static version
 
-fluid~: now runs perfectly with sound; required flext runtime errors to be resolved in using the statically-linked non-debug static version, but also needed flext to be linked against the generated executable in the build system
+fluid~: now runs properly, although sound has not yet been tested due to my
+lack of soundfonts; required flext runtime errors to be resolved in using the
+statically-linked non-debug static version, but also needed flext to be linked
+against the generated executable in the build system
 
 ## Building
 
