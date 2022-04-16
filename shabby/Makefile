@@ -24,7 +24,8 @@ PDINCPATH=	${LOCALBASE}/include/pd
 FLEXTINCPATH=	${LOCALBASE}/include/flext
 INCLUDES=	/${INCPATH} ${FLEXTINCPATH} ${PDINCPATH}
 #FLEXTLIB=	${FLEXTLIBPATH}/flext.a
-FLEXTLIB=	flext.a
+#FLEXTLIB=	flext.a
+FLEXTLIB=	flext.o
 LIBS=	m
 
 #PDEXTRA=	$(DESTDIR)${LOCALBASE}/lib/pd/extra
@@ -41,7 +42,8 @@ $(TARGDIR):
 	mkdir $(TARGDIR)
 
 ${FLEXTLIB}:
-	cp -pv ${FLEXTLIBPATH}/libflext-pd.a ${FLEXTLIB}
+	cp -pv ${FLEXTLIBPATH}/libflext-pd.a ${*}.a
+	ar r ${*}.a ${FLEXTLIB}
 
 $(TARGDIR)/%.o:	%.cpp
 	${CXX} -c ${CFLAGS} -fPIC ${FLAGS} $(patsubst %,-I%,$(INCLUDES)) $< -o $@
