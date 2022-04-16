@@ -85,7 +85,7 @@ TARGDIR=	./
 all: ${TARGETS}
 
 ${FLEXTLIB}:
-	cp -pv ${FLEXTLIBPATH}/libflext-pd.a ${FLEXTLIB}
+	cp -pv ${FLEXTLIBPATH}/libflext-pd_sd.a ${FLEXTLIB}
 
 ${SNDOBJLIB}:
 	cp -pv ${SNDOBJLIBPATH}/libsndobj.a ${SNDOBJLIB}
