@@ -12,12 +12,12 @@ Timothy Beyer 2022-04-14
 
 ## Description of externals
 
-knob: one of the earliest and best knob externals (Pure Data 0.35 license,
-copyfree compatible?), similar yet distinct from flatgui/knob and
-abctools/abcknob
+knob: one of the earliest and best knob externals (Pure Data 0.35 license;
+permissive and likely copyfree compatible), similar yet distinct from
+flatgui/knob and abctools/abcknob
 
 rx7~: DX7 emulator external for Pure Data based on RX/Saturno 0.0.1 (rx7~
-appears to be some kind of permissive license, though rx-saturno is GNU GPLv2)
+appears to have a permissive license, though rx-saturno's license is GNU GPLv2)
 
 shabby~: Waveshaper using 11 Chebychev polynomials to generate harmonics from
 an incoming sinewave.  May be used to make a rudimentary additive synth with
@@ -26,9 +26,23 @@ signal rate control over harmonics.
 shaffy~: Waveshaper using 9 Chebychev polynomials to generate harmonics from an
 incoming sinewave.  Maybe used as an additive synth for wind-like sounds.
 
-syncgrain~: granular synth (GNU GPLv2)
+syncgrain~: granular synth (GNU GPLv2 license)
 
-fluid~: A fluidsynth soundfont (SF2) player (GNU GPLv2+)
+fluid~: A fluidsynth soundfont (SF2) player (GNU GPLv2+ license)
+
+## Status of Externals
+
+knob: runs perfectly as far as I can tell, from the first time it was run, and well before the other externals
+
+rx7~: now runs perfectly with sound; initially was missing files from RX-Saturno, and since more object files needed to be built, more patching was required, but the end result is that it builds and runs properly
+
+shabby~: almost working!  The flext runtime errors have been resolved in using the statically-linked non-debug static version, but gives "Too many creation arguments" error at runtime
+
+shaffy~: almost working!  The flext runtime errors have been resolved in using the statically-linked non-debug static version, but gives "Too many creation arguments" error at runtime
+
+syncgrain~: now runs perfectly with sound; required flext runtime errors to be resolved in using the statically-linked non-debug static version
+
+fluid~: now runs perfectly with sound; required flext runtime errors to be resolved in using the statically-linked non-debug static version, but also needed flext to be linked against the generated executable in the build system
 
 ## Building
 
