@@ -43,14 +43,15 @@ $(TARGDIR):
 ${FLEXTLIB}:
 	cp -pv ${FLEXTLIBPATH}/libflext-pd.a ${FLEXTLIB}
 
-$(TARGDIR)/%.o : %.cpp
+$(TARGDIR)/%.o:	%.cpp
 	${CXX} -c ${CFLAGS} -fPIC ${FLAGS} $(patsubst %,-I%,$(INCLUDES)) $< -o $@
 
-$(TARGET) : $(patsubst %.cpp,$(TARGDIR)/%.o,$(SRCS)) ${FLEXTLIB}
-	${CXX} ${LDFLAGS} -Wl,-z,notext -shared $^ $(patsubst %,-l%,$(LIBS)) -o $@
-	chmod 755 $@
+$(TARGET):	$(patsubst %.cpp,$(TARGDIR)/%.o,$(SRCS)) ${FLEXTLIB}
+	${CXX} ${LDFLAGS} -Wl,-z,notext --shared --export-dynamic \
+		$^ $(patsubst %,-l%,$(LIBS)) ${FLEXTLIB} -o ${@}
+	chmod 755 ${@}
 
-install: $(TARGET)
+install:	$(TARGET)
 	mkdir -p ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_LIB} shabby~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
 	${INSTALL_LIB} shaffy~.${EXTENSION} ${FOOTILS_PDEXTERNALSDIR}
