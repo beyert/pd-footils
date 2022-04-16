@@ -16,6 +16,11 @@
  ***************************************************************************/
 
 #include "open_bank.h"
+#include <string>
+#include <vector>
+
+using std::vector;
+using std::string;
 
 vector<Dx7_Voice::Data> Open_Bank::file(string p_filename) {
 

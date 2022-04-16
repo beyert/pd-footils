@@ -17,6 +17,8 @@
 
 #include "properties.h"
 
+using std::string;
+
 void Properties::add_section(string p_name) {
 
 	Section new_section;
