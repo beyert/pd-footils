@@ -10,7 +10,7 @@ Note that the licenses differ substantially between each project.
 
 Timothy Beyer 2022-04-14
 
-## Description of externals
+## Description of Externals
 
 knob: one of the earliest and best knob externals (Pure Data 0.35 license;
 permissive and likely copyfree compatible), similar yet distinct from
